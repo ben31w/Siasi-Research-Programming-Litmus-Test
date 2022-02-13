@@ -1,16 +1,19 @@
-# This is a sample Python script.
+import csv
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from food_item import FoodItem
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    foods = []
+    filepath = '../resources/FoodInputData.csv'
+    with open(filepath, 'rt') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader, None)  # skip the header line
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        for line in reader:
+            food = FoodItem(line[0], line[2], line[3], line[4])
+            print(food)
+            foods.append(food)
+
+
+
