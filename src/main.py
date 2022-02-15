@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 from food_item import FoodItem
 from foods import Foods
+from sort_helpers import _quicksort_food_by_calories, _quicksort_food_by_fat, _quicksort_food_by_taste_score
 
 
 def total_calories(list_of_foods):
@@ -18,6 +19,19 @@ def avg_calories(list_of_foods):
     """Return the average calories from a list of food items."""
     sum = total_calories(list_of_foods)
     return sum / len(list_of_foods)
+
+
+def sort_food(list_of_foods, sort_by):
+    """
+        Sort the given list of foods by the given sort by parameter.
+        Can sort by calories, fat, or taste score.
+    """
+    if sort_by.lower() == 'calories':
+        _quicksort_food_by_calories( list_of_foods, 0, len(list_of_foods) - 1 )
+    elif sort_by.lower() == 'fat':
+        print()
+    elif sort_by.lower() == 'taste score' or sort_by.lower() == 'taste_score':
+        print()
 
 
 if __name__ == '__main__':
@@ -57,4 +71,12 @@ if __name__ == '__main__':
     plt.ylabel('Average calories')
     plt.show()
     fig.savefig(os.path.join('..', 'graphs', 'average_calories.png'))
+
+    # Demonstrating a sort function...
+    for food in food_items:
+        print(food, end=' ;; ')
+    print("\n\n")
+    sort_food(food_items, sort_by='calories')
+    for food in food_items:
+        print(food, end=' ;; ')
 
