@@ -72,11 +72,6 @@ if __name__ == '__main__':
     plt.show()
     fig.savefig(os.path.join('..', 'graphs', 'average_calories.png'))
 
-    # Demonstrating a sort function...
-    for food in food_items:
-        print(food, end=' ;; ')
-    print("\n\n")
-    sort_food(food_items, sort_by='calories')
-    for food in food_items:
-        print(food, end=' ;; ')
+    # TODO demonstrate the sort functions by creating text files.
+
 

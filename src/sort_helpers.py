@@ -100,7 +100,7 @@ def _quicksort_food_by_calories(list_of_foods, start, end):
         _quicksort_food_by_calories(list_of_foods, pivot_index + 1, end)
 
 
-def _quicksort_food_by_fat():
+def _quicksort_food_by_fat(list_of_foods, start, end):
     """
         Sort the list of foods by ascending fat.
         :param list_of_foods: list of FoodItem objects to sort
@@ -114,7 +114,7 @@ def _quicksort_food_by_fat():
         _quicksort_food_by_fat(list_of_foods, pivot_index + 1, end)
 
 
-def _quicksort_food_by_taste_score():
+def _quicksort_food_by_taste_score(list_of_foods, start, end):
     """
         Sort the list of foods by ascending taste score.
         :param list_of_foods: list of FoodItem objects to sort
